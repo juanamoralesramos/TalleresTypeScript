@@ -50,7 +50,7 @@ function mostrarDatosSerie(series: Serie[]):void{
   serieTable.appendChild(tbodySerie);
 }
 
-let promedio: HTMLElement = document.getElementById("promedio temporadas")!;
+let promedio: HTMLElement = document.getElementById("promedioTemporadas")!;
 promedio.innerHTML=`Seasons Average: ${calcularPromedioTemporadas(temporadasArray).toPrecision(2)} `;
 function calcularPromedioTemporadas(series: number[]): number {
   const sumaTemporadas = series.reduce((total, temporada) => total + temporada, 0);
@@ -60,23 +60,24 @@ function calcularPromedioTemporadas(series: number[]): number {
 
 serieTable.click();
 
-function paginaInteractiva() {
-  let tablaSeries: HTMLTableElement = <HTMLTableElement>(document.getElementById("serieTable")!);
-  let rows = tablaSeries.getElementsByTagName("tr");
+document.addEventListener("DOMContentLoaded", function() {
+  function paginaInteractiva() {
+    let tablaSeries: HTMLTableElement = <HTMLTableElement>(document.getElementById("serieTable")!);
+    let rows = tablaSeries.getElementsByTagName("tr");
 
-  for (let i = 0; i < tablaSeries.rows.length; i++) {
-    rows[i].addEventListener("click", function () {
-      let clickedRow = this.rowIndex;
-      let serie = serieById.get(clickedRow);
-      detalleTarjeta(serie);
-    });
+    for (let i = 0; i < tablaSeries.rows.length; i++) {
+      rows[i].addEventListener("click", function () {
+        let clickedRow = this.rowIndex;
+        let serie = serieById.get(clickedRow);
+        detalleTarjeta(serie);
+      });
+    }
   }
-}
 
 paginaInteractiva();
 
 function detalleTarjeta(serie: any) {
-  let tarjeta = document.getElementById("detalle tarjeta")!;
+  let tarjeta = document.getElementById("detalleTarjeta")!;
   tarjeta.innerHTML = 
   `<img 
         src="${serie.image}" 
@@ -94,5 +95,5 @@ function detalleTarjeta(serie: any) {
     <a href=${serie.link}>
     ${serie.link}
     </a>`;
-}
-
+  }
+});

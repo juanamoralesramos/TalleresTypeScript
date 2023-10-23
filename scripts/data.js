@@ -28,7 +28,7 @@ function mostrarDatosSerie(series) {
     }
     serieTable.appendChild(tbodySerie);
 }
-var promedio = document.getElementById("promedio temporadas");
+var promedio = document.getElementById("promedioTemporadas");
 promedio.innerHTML = "Seasons Average: ".concat(calcularPromedioTemporadas(temporadasArray).toPrecision(2), " ");
 function calcularPromedioTemporadas(series) {
     var sumaTemporadas = series.reduce(function (total, temporada) { return total + temporada; }, 0);
@@ -36,20 +36,22 @@ function calcularPromedioTemporadas(series) {
     return promedioTemporadas;
 }
 serieTable.click();
-function paginaInteractiva() {
-    var tablaSeries = (document.getElementById("serieTable"));
-    var rows = tablaSeries.getElementsByTagName("tr");
-    for (var i = 0; i < tablaSeries.rows.length; i++) {
-        rows[i].addEventListener("click", function () {
-            var clickedRow = this.rowIndex;
-            var serie = serieById.get(clickedRow);
-            detalleTarjeta(serie);
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    function paginaInteractiva() {
+        var tablaSeries = (document.getElementById("serieTable"));
+        var rows = tablaSeries.getElementsByTagName("tr");
+        for (var i = 0; i < tablaSeries.rows.length; i++) {
+            rows[i].addEventListener("click", function () {
+                var clickedRow = this.rowIndex;
+                var serie = serieById.get(clickedRow);
+                detalleTarjeta(serie);
+            });
+        }
     }
-}
-paginaInteractiva();
-function detalleTarjeta(serie) {
-    var tarjeta = document.getElementById("detalle tarjeta");
-    tarjeta.innerHTML =
-        "<img \n        src=\"".concat(serie.image, "\" \n        \n    > \n  <div class=\"card-body\">\n    <p class=\"card-text\" style=\"text-align: center;\">\n        <h3>\n            ").concat(serie.name, "\n        </h3>\n    </p>\n    <p class=\"card-text\" style=\"text-align: justify;\">\n        ").concat(serie.description, "\n    </p>\n    <a href=").concat(serie.link, ">\n    ").concat(serie.link, "\n    </a>");
-}
+    paginaInteractiva();
+    function detalleTarjeta(serie) {
+        var tarjeta = document.getElementById("detalleTarjeta");
+        tarjeta.innerHTML =
+            "<img \n        src=\"".concat(serie.image, "\" \n        \n    > \n  <div class=\"card-body\">\n    <p class=\"card-text\" style=\"text-align: center;\">\n        <h3>\n            ").concat(serie.name, "\n        </h3>\n    </p>\n    <p class=\"card-text\" style=\"text-align: justify;\">\n        ").concat(serie.description, "\n    </p>\n    <a href=").concat(serie.link, ">\n    ").concat(serie.link, "\n    </a>");
+    }
+});

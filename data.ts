@@ -14,4 +14,23 @@ export const series = [
     new Serie (6, "A Very English Scandal", "BBC", 2),
   ];
 
-console.log(series);
+let serieTable: HTMLElement = document.getElementById("series")!;
+let promedioTemporadasTable: HTMLElement = document.getElementById("estadísticas")!;
+mostrarDatosSerie(series);
+
+function mostrarDatosSerie(series: Serie[]):void{
+  let tbodySerie: HTMLElement = document.createElement("tbody");
+
+  for (const serie of series) 
+  {
+    let trElement:HTMLElement = document.createElement("tr");
+    trElement.innerHTML = `<td>${serie.id}</td>
+      <td>${serie.name}</td>
+      <td>${serie.channel}</td>
+      <td>${serie.seasons}</td>`;
+    tbodySerie.appendChild(trElement);
+  }
+  serieTable.appendChild(tbodySerie);
+}
+
+

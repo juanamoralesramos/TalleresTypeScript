@@ -12,6 +12,7 @@
             background-color: #3cc1d1;
             color: black;
             padding: 10px;
+            display: flex;
         }
         h1 {
             margin: 0;
@@ -19,13 +20,66 @@
             font-size: 16px;
         }
         .imagen {
+            width: auto; 
+            height: 20px;
             margin-right: 10px;
         }
+        
+        table {
+            margin-left: 60px; 
+            margin-right: 25px;
+            border: 1px solid #ccc; 
+            border-collapse: collapse; 
+            float: left; 
+            width: 50%;
+            font-family: Arial, sans-serif;
+            border-radius: 30px; 
+            margin: 30px;
+        }
+
+        th, td {
+            border-bottom: 1px solid #ccc;
+            padding: 8px;
+            font-size: 12px;
+        }
+
+        th {
+            background-color: #ffffff;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ececec;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ececec;
+        }
+
+        th:first-child,  td:first-child {
+            font-weight: bold; 
+        }
+
     </style>
 <body>
     <div class="titulo">
-        <img src="tu_imagen.jpg" alt="Imagen Cuadrada" class="imagen">
+        <img src="img/logotaller.jpg" alt="Imagen Cuadrada" class="imagen">
         <h1>TV Series</h1>
+    </div>
+    <div>
+        <table class="table" id="series">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Channel</th>
+                    <th>Seasons</th>
+                </tr>
+            </thead>
+
+        </table>
+        <label id="promedio temporadas"></label>
     </div>
 
 </body>

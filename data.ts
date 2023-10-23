@@ -27,7 +27,8 @@ series.forEach(serie =>{
   });
    
 
-let serieTable: HTMLElement = document.getElementById("series")!;
+let serieTable: HTMLElement = document.getElementById("serieTable")!;
+
 mostrarDatosSerie(series);
 
 const temporadasArray: number[] = [] = [];

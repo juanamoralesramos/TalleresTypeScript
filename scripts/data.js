@@ -11,7 +11,7 @@ export var series = [
 series.forEach(function (serie) {
     serieById.set(serie.id, serie);
 });
-var serieTable = document.getElementById("series");
+var serieTable = document.getElementById("seriesTable");
 mostrarDatosSerie(series);
 var temporadasArray = [];
 for (var _i = 0, series_1 = series; _i < series_1.length; _i++) {

@@ -11,7 +11,7 @@ export var series = [
 series.forEach(function (serie) {
     serieById.set(serie.id, serie);
 });
-var serieTable = document.getElementById("seriesTable");
+var serieTable = document.getElementById("series");
 mostrarDatosSerie(series);
 var temporadasArray = [];
 for (var _i = 0, series_1 = series; _i < series_1.length; _i++) {
@@ -49,7 +49,7 @@ function paginaInteractiva() {
 }
 paginaInteractiva();
 function detalleTarjeta(serie) {
-    var tarjeta = document.getElementById("detalleTarjeta");
+    var tarjeta = document.getElementById("detalle tarjeta");
     tarjeta.innerHTML =
         "<img \n        src=\"".concat(serie.image, "\" \n        \n    > \n  <div class=\"card-body\">\n    <p class=\"card-text\" style=\"text-align: center;\">\n        <h3>\n            ").concat(serie.name, "\n        </h3>\n    </p>\n    <p class=\"card-text\" style=\"text-align: justify;\">\n        ").concat(serie.description, "\n    </p>\n    <a href=").concat(serie.link, ">\n    ").concat(serie.link, "\n    </a>");
 }

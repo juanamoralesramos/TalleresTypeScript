@@ -27,8 +27,7 @@ series.forEach(serie =>{
   });
    
 
-let serieTable: HTMLElement = document.getElementById("serieTable")!;
-
+let serieTable: HTMLElement = document.getElementById("series")!;
 mostrarDatosSerie(series);
 
 const temporadasArray: number[] = [] = [];
@@ -77,7 +76,7 @@ function paginaInteractiva() {
 paginaInteractiva();
 
 function detalleTarjeta(serie: any) {
-  let tarjeta = document.getElementById("detalleTarjeta")!;
+  let tarjeta = document.getElementById("detalle tarjeta")!;
   tarjeta.innerHTML = 
   `<img 
         src="${serie.image}" 
